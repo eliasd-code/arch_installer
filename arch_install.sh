@@ -25,7 +25,7 @@ then
     while true
     do
         echo ""
-        echo "Nutzt du eine Intel oder Amd Grafikarte? intel/amd"
+        echo "Nutzt du eine Intel oder Amd CPU? intel/amd"
         read ant
         if [ "$ant" == "intel" ]
         then
@@ -75,7 +75,7 @@ then
         read grub
         echo "hast du ein EFI oder ein Legacy System?   efi/legacy"
         read bios
-        
+        echo ""
         echo Der grub Bootloader wird auf /dev"$grub" installiert
         echo du nutzt ein "$bios" System
         echo "Sind diese Angaben richtig ?   nein/ja"
