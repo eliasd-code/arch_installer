@@ -3,7 +3,7 @@ echo ""
 echo "======================================================"
 echo "GitHub : https://github.com/eliasd-code"
 echo "Youtube : https://www.youtube.com/channel/UCJWsbSIhyyGQtnwHpGcZnrw?view_as=subscriber"
-echo "Updated at 16.08.2020"
+echo "Updated at 07.06.2021"
 echo "Dieses skript ersetzt nicht das wissen das du bei der manuellen installation benötigen würdest!"
 echo ""
 echo "Sei dir sicher das du bereits partitioniert, gemountet und eine aktive internet verbindung aufgebaut hast!"
@@ -21,7 +21,7 @@ echo "======================================================"
 if [ "$teil" == "a" ]
 then
     echo "Teil a"
-    pacstrap /mnt base base-devel linux-lts linux-firmware nano dhcpcd bash-completion wpa_supplicant netctl dialog lvm2
+    pacstrap /mnt base base-devel linux linux-firmware nano dhcpcd bash-completion wpa_supplicant netctl dialog lvm2
     while true
     do
         echo ""
@@ -131,8 +131,9 @@ then
     hwclock -w
     date
     pacman -S xorg-server xorg-xinit
-    echo "welcher grafiktreiber soll installiert werden? (ACHTUNG wir nutzen Linux-lts!) ;)"
-    echo "( zb nvidia-lts, usw)"
+    echo "Welcher Grafiktreiber soll installiert werden? ;)"
+    echo "Für Nvidia Grafikkarten: (nvidia)"
+    echo "Für AMD Grafikarten (xf86-video-amdgpu und amdvlk)"
     echo "Enter drücken falls kein Treiber installiert werden soll."
     read ant
     pacman -S "$ant"
@@ -144,7 +145,7 @@ then
     read ant
     if [ "$ant" == "ja" ]
     then
-        pacman -S xfce4 xfce4-goodies lightdm lightdm-gtk-greeter lightdm-gtk-greeter-settings pulseaudio pulseaudio-alsa pulseaudio-bluetooth pulseaudio-equalizer pavucontrol
+        pacman -S xfce4 xfce4-goodies lightdm lightdm-gtk-greeter lightdm-gtk-greeter-settings pipewire pipewire-pulse pipewire-alsa piewire-jack pipewire-media-session pavucontrol
         systemctl enable lightdm
     else
         echo "Desktop umgebung wird nicht mit installiert."
@@ -157,7 +158,7 @@ then
     read ant
     if [ "$ant" == "ja" ]
     then
-        pacman -S firefox libreoffice-still nmap net-tools linux-lts-headers linux-headers gparted unzip git wget xz p7zip vlc okular geeqie ufw iptables networkmanager nm-connection-editor network-manager-applet thunderbird gimp adobe-source-sans-pro-fonts aspell-de enchant gst-libav gst-plugins-good hunspell-de icedtea-web jre8-openjdk languagetool libmythes mythes-de pkgstats ttf-anonymous-pro ttf-bitstream-vera ttf-dejavu ttf-droid ttf-liberation ttf-ubuntu-font-family
+        pacman -S firefox libreoffice-still nmap net-tools linux-headers gparted unzip git wget xz p7zip vlc okular geeqie ufw iptables networkmanager modemmanager nm-connection-editor network-manager-applet thunderbird gimp adobe-source-sans-pro-fonts aspell-de enchant gst-libav gst-plugins-good hunspell-de icedtea-web jre8-openjdk languagetool libmythes mythes-de pkgstats ttf-anonymous-pro ttf-bitstream-vera ttf-dejavu ttf-droid ttf-liberation ttf-ubuntu-font-family
         systemctl enable NetworkManager.service
 
     else
@@ -167,7 +168,7 @@ then
     echo ""
     echo "installation wurde erfolgreich abgeschlossen :)"
     echo "Viel Spaß auf deinem neuen System!"
-    echo " Danke/F*** you"
+    echo "Danke"
     read a
 
 
