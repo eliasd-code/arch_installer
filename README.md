@@ -1,12 +1,10 @@
-#Arch Installer
-#by eliasd-code
+Arch Installer
+by eliasd-code
 
-Bevor du dieses script ausführst musst du eine bestehende aktive internet verbindung aufgebaut haben.
-Dazu solltest du bereits partitioniert und gemounted haben.
-Diese Skript ersetzt nicht das wissen das du bei der manuellen Installation brauchen würdest.
+Bevor du dieses Skript ausführst, musst du eine bestehende aktive Internetverbindung aufgebaut haben.
+Außerdem solltest du bereits partitioniert und gemountet haben.
+Dieses Skript ersetzt nicht das Wissen, das du für die manuelle Installation benötigst.
 
 How To:
-Das Skript auf einen USB stick oder eine externe festplatte kopieren und diese dann mounten.
-Das Skript per "sh arch_install.sh" ausführen und die anweisungen befolgen.
-
-
+Kopiere das Skript auf einen USB-Stick oder eine externe Festplatte und mounte das Medium.
+Führe das Skript mit sh arch_install.sh aus und folge den Anweisungen.
